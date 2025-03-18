@@ -1,5 +1,11 @@
 ﻿$(document).ready(function () {
 
+    cargarDataTable();
+
+});
+
+function cargarDataTable() {
+
     datatable = $("#tbData").DataTable({
         "processing": true,
         "serverSide": true,
@@ -25,7 +31,12 @@
             { "data": "ultimoResultado2" },
             { "data": "fechaUltResultado2" },
         ],
+        "columnDefs": [
+            { "orderable": false, "targets": [0, 1, 3, 4, 5, 6, 7, 8, 9, 10, 11 ,12] }
+        ],
         scrollX: true,
+        scrollCollapse: true,
+        scrollY: '500px',
         search: {
             return: true
         },
@@ -35,10 +46,10 @@
         layout: {
             topStart: {
                 buttons: [
-                    'copy', 'excel', 'pdf'
+                    'pageLength', 'copy', 'excel', 'pdf'
                 ]
             }
         }
     });
 
-});
+}
