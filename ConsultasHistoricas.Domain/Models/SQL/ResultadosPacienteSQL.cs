@@ -12,9 +12,9 @@
 
         public DateTime OrdenFecha { get; set; }
 
-        public int CodigoExamen { get; set; }
-
         public string NombreExamen { get; set; }
+
+        public DateTime FechaIngreso { get; set; }
 
         public string Resultado { get; set; }
 

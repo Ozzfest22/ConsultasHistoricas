@@ -39,6 +39,18 @@ namespace ConsultasHistoricas.Application.DataHistoricaSQL.Services
             };
 
             var data = await _repository.GetAllByNameSQLAsync(req);
+
+            if (data == null || !data.Any())
+            {
+                return new DataTableResponse<ResultadosPacienteSQL>()
+                {
+                    Draw = request.Draw,
+                    RecordsTotal = 0,
+                    RecordsFiltered = 0,
+                    Data = new ResultadosPacienteSQL[0],
+                    Error = ""
+                };
+            }
             
             return new DataTableResponse<ResultadosPacienteSQL>()
             {
