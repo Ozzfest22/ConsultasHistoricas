@@ -2,7 +2,7 @@
 {
     public class DataTableColumn
     {
-        public string Data {  get; set; }
+        public string Data { get; set; }
 
         public string Name { get; set; }
 

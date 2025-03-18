@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ConsultasHistoricas.Domain.Models.SQL;
+﻿using ConsultasHistoricas.Domain.Models.SQL;
 using ConsultasHistoricas.Domain.Repositories.Query;
 using ConsultasHistoricas.Infrastructure.SQLServer.Repositories.Base;
 using Dapper;
 using Microsoft.Extensions.Configuration;
+using System.Data;
 
 namespace ConsultasHistoricas.Infrastructure.SQLServer.Repositories
 {
-    public class DataHistoricaRepository : QueryRepository<ResultadosPacienteSQL>, IDataHistoricaRepository
+    public class DataHistoricaRepositorySQL : QueryRepositorySQL<ResultadosPacienteSQL>, IDataHistoricaRepositorySQL
     {
-        public DataHistoricaRepository(IConfiguration configuration) : base(configuration)
+        public DataHistoricaRepositorySQL(IConfiguration configuration) : base(configuration)
         {
         }
 
@@ -39,7 +34,7 @@ namespace ConsultasHistoricas.Infrastructure.SQLServer.Repositories
             }
         }
 
-        public async Task<List<ResultadosPacienteSQL>> GetAllByNameAsync(ListRequest request)
+        public async Task<List<ResultadosPacienteSQL>> GetAllByNameSQLAsync(ListRequest request)
         {
             try
             {

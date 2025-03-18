@@ -19,8 +19,4 @@
     <ProjectReference Include="..\ConsultasHistoricas.Domain\ConsultasHistoricas.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Oracle\" />
-  </ItemGroup>
-
 </Project>

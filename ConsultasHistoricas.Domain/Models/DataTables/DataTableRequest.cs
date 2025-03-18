@@ -2,7 +2,7 @@
 {
     public class DataTableRequest
     {
-        public int Draw {  get; set; }
+        public int Draw { get; set; }
 
         public int Start { get; set; }
 

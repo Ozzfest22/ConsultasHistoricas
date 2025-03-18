@@ -1,6 +1,5 @@
 ﻿using ConsultasHistoricas.Application.DataHistoricaSQL.Services;
 using ConsultasHistoricas.Domain.Models.SQL;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ConsultasHistoricas.API.Controllers
@@ -17,7 +16,7 @@ namespace ConsultasHistoricas.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll() 
+        public async Task<IActionResult> GetAll()
         {
             var data = await _dataHistoricaService.GetAllAsync();
 
@@ -25,7 +24,7 @@ namespace ConsultasHistoricas.API.Controllers
         }
 
         [HttpGet("name")]
-        public async Task<IActionResult> GetAllByName([FromQuery] ListRequest request) 
+        public async Task<IActionResult> GetAllByName([FromQuery] ListRequest request)
         {
             var data = await _dataHistoricaService.GetAllByNameAsync(request);
 
