@@ -1,9 +1,9 @@
-﻿using ConsultasHistoricas.Domain.Models.SQL;
+﻿using System.Data;
+using ConsultasHistoricas.Domain.Models.SQL;
 using ConsultasHistoricas.Domain.Repositories.Query;
 using ConsultasHistoricas.Infrastructure.SQLServer.Repositories.Base;
 using Dapper;
 using Microsoft.Extensions.Configuration;
-using System.Data;
 
 namespace ConsultasHistoricas.Infrastructure.SQLServer.Repositories
 {

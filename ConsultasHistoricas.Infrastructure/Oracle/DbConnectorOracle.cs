@@ -1,6 +1,6 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using System.Data;
+using Microsoft.Extensions.Configuration;
 using Oracle.ManagedDataAccess.Client;
-using System.Data;
 
 namespace ConsultasHistoricas.Infrastructure.Oracle
 {

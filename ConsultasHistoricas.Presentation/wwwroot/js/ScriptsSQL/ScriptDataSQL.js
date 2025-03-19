@@ -9,6 +9,7 @@ function cargarDataTable() {
     datatable = $("#tbData").DataTable({
         "processing": true,
         "serverSide": true,
+        "deferLoading": 0,
         "responsive": false,
         "ajax": {
             "url": "/DataSQL/GetData",
@@ -46,7 +47,7 @@ function cargarDataTable() {
         layout: {
             topStart: {
                 buttons: [
-                    'pageLength', 'copy', 'excel', 'pdf'
+                    'pageLength', 'copy', 'excel', 'pdf',
                 ]
             }
         }

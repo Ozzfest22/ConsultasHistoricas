@@ -1,6 +1,6 @@
+using System.Diagnostics;
 using ConsultasHistoricas.Presentation.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
 
 namespace ConsultasHistoricas.Presentation.Controllers;
 

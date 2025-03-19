@@ -7,9 +7,9 @@ namespace ConsultasHistoricas.Presentation.Controllers
 {
     public class DataSQLController : Controller
     {
-        private readonly IDataHistoricaService _dataHistoricaService;
+        private readonly IDataHistoricaSQLService _dataHistoricaService;
 
-        public DataSQLController(IDataHistoricaService dataHistoricaService)
+        public DataSQLController(IDataHistoricaSQLService dataHistoricaService)
         {
             _dataHistoricaService = dataHistoricaService;
         }

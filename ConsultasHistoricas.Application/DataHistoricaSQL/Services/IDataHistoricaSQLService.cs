@@ -3,7 +3,7 @@ using ConsultasHistoricas.Domain.Models.SQL;
 
 namespace ConsultasHistoricas.Application.DataHistoricaSQL.Services
 {
-    public interface IDataHistoricaService
+    public interface IDataHistoricaSQLService
     {
         Task<IEnumerable<ResultadosPacienteSQL>> GetAllAsync();
 

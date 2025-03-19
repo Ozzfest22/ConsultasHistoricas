@@ -4,12 +4,12 @@ using ConsultasHistoricas.Domain.Repositories.Query;
 
 namespace ConsultasHistoricas.Application.DataHistoricaSQL.Services
 {
-    public class DataHistoricaService : IDataHistoricaService
+    public class DataHistoricaSQLService : IDataHistoricaSQLService
     {
 
         private readonly IDataHistoricaRepositorySQL _repository;
 
-        public DataHistoricaService(IDataHistoricaRepositorySQL repository)
+        public DataHistoricaSQLService(IDataHistoricaRepositorySQL repository)
         {
             _repository = repository;
         }
@@ -51,7 +51,7 @@ namespace ConsultasHistoricas.Application.DataHistoricaSQL.Services
                     Error = ""
                 };
             }
-            
+
             return new DataTableResponse<ResultadosPacienteSQL>()
             {
                 Draw = request.Draw,

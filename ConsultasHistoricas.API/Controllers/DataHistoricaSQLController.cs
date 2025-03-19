@@ -8,9 +8,9 @@ namespace ConsultasHistoricas.API.Controllers
     [ApiController]
     public class DataHistoricaSQLController : ControllerBase
     {
-        private readonly IDataHistoricaService _dataHistoricaService;
+        private readonly IDataHistoricaSQLService _dataHistoricaService;
 
-        public DataHistoricaSQLController(IDataHistoricaService dataHistoricaService)
+        public DataHistoricaSQLController(IDataHistoricaSQLService dataHistoricaService)
         {
             _dataHistoricaService = dataHistoricaService;
         }
