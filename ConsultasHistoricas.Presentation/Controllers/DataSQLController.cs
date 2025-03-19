@@ -19,6 +19,11 @@ namespace ConsultasHistoricas.Presentation.Controllers
             return View();
         }
 
+        public IActionResult SQLView() 
+        {
+            return PartialView("_SqlPartial");
+        }
+
         [HttpPost]
         public async Task<DataTableResponse<ResultadosPacienteSQL>> GetData()
         {
