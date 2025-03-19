@@ -16,7 +16,7 @@ function cargarDataTable() {
             "type": "POST",
             "datatype": "json"
         },
-        "lengthMenu": [5, 10, 15],
+        "lengthMenu": [10, 50, 100],
         "columns": [
             { "data": "codigoHistoria" },
             { "data": "nombre" },
