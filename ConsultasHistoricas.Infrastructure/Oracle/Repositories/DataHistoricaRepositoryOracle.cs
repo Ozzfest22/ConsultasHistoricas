@@ -1,6 +1,6 @@
 ﻿using System.Data;
 using ConsultasHistoricas.Domain.Models.Oracle;
-using ConsultasHistoricas.Domain.Models.SQL;
+using ConsultasHistoricas.Domain.Models.Shared;
 using ConsultasHistoricas.Domain.Repositories.Query;
 using ConsultasHistoricas.Infrastructure.Oracle.Repositories.Base;
 using Microsoft.Extensions.Configuration;
@@ -65,7 +65,7 @@ namespace ConsultasHistoricas.Infrastructure.Oracle.Repositories
 
                             while (await reader.ReadAsync())
                             {
-                                data.Add(new ResultadosPacienteOracle 
+                                data.Add(new ResultadosPacienteOracle
                                 {
                                     Row_Num = reader.IsDBNull(0) ? 0 : reader.GetInt32(0),
                                     OrdenAño = reader.IsDBNull(1) ? null : reader.GetString(1),

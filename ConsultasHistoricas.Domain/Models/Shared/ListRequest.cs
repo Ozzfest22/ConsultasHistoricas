@@ -1,4 +1,4 @@
-﻿namespace ConsultasHistoricas.Domain.Models.SQL
+﻿namespace ConsultasHistoricas.Domain.Models.Shared
 {
     public class ListRequest
     {

@@ -1,6 +1,6 @@
 ﻿using ConsultasHistoricas.Domain.Models.DataTables;
 using ConsultasHistoricas.Domain.Models.Oracle;
-using ConsultasHistoricas.Domain.Models.SQL;
+using ConsultasHistoricas.Domain.Models.Shared;
 
 namespace ConsultasHistoricas.Application.DataHistoricaOracle.Services
 {

@@ -19,7 +19,7 @@ namespace ConsultasHistoricas.Presentation.Controllers
             return View();
         }
 
-        public IActionResult SQLView() 
+        public IActionResult SQLView()
         {
             return PartialView("_SqlPartial");
         }

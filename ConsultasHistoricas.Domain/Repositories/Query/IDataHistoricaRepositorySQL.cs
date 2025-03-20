@@ -1,4 +1,5 @@
-﻿using ConsultasHistoricas.Domain.Models.SQL;
+﻿using ConsultasHistoricas.Domain.Models.Shared;
+using ConsultasHistoricas.Domain.Models.SQL;
 using ConsultasHistoricas.Domain.Repositories.Query.Base;
 
 namespace ConsultasHistoricas.Domain.Repositories.Query

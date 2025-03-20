@@ -8,9 +8,9 @@
 
         public string? CabeceraOrdServicio { get; set; }
 
-        public string? Paciente {  get; set; }
+        public string? Paciente { get; set; }
 
-        public int? Edad {  get; set; }
+        public int? Edad { get; set; }
 
         public string? Medico { get; set; }
 
@@ -34,19 +34,19 @@
 
         public DateTime? FechaMuestra { get; set; }
 
-        public string? ResultadoOrigen {  get; set; }
+        public string? ResultadoOrigen { get; set; }
 
         public string? ResultadoNuevo { get; set; }
 
         public string? Servicio { get; set; }
     }
 
-    public partial class ResultadosPacienteOracle 
+    public partial class ResultadosPacienteOracle
     {
-        public int Row_Num {  get; set; }
+        public int Row_Num { get; set; }
 
         public int FilteredCount { get; set; }
 
-        public  string TotalCount { get; set; }
+        public string TotalCount { get; set; }
     }
 }

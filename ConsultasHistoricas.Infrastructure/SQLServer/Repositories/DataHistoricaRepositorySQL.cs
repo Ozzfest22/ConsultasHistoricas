@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using ConsultasHistoricas.Domain.Models.Shared;
 using ConsultasHistoricas.Domain.Models.SQL;
 using ConsultasHistoricas.Domain.Repositories.Query;
 using ConsultasHistoricas.Infrastructure.SQLServer.Repositories.Base;

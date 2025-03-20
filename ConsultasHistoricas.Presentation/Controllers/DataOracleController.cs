@@ -1,7 +1,6 @@
 ﻿using ConsultasHistoricas.Application.DataHistoricaOracle.Services;
 using ConsultasHistoricas.Domain.Models.DataTables;
 using ConsultasHistoricas.Domain.Models.Oracle;
-using ConsultasHistoricas.Domain.Models.SQL;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ConsultasHistoricas.Presentation.Controllers

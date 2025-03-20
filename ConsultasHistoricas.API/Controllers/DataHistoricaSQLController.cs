@@ -1,5 +1,5 @@
 ﻿using ConsultasHistoricas.Application.DataHistoricaSQL.Services;
-using ConsultasHistoricas.Domain.Models.SQL;
+using ConsultasHistoricas.Domain.Models.Shared;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ConsultasHistoricas.API.Controllers
