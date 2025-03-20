@@ -15,13 +15,6 @@ namespace ConsultasHistoricas.Application.DataHistoricaSQL.Services
             _repository = repository;
         }
 
-        public Task<IEnumerable<ResultadosPacienteSQL>> GetAllAsync()
-        {
-            var data = _repository.GetAllAsync();
-
-            return data;
-        }
-
         public Task<List<ResultadosPacienteSQL>> GetAllByNameAsync(ListRequest request)
         {
             var data = _repository.GetAllByNameSQLAsync(request);

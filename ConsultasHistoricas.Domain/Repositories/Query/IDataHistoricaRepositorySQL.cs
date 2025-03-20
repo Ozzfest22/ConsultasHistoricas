@@ -6,8 +6,6 @@ namespace ConsultasHistoricas.Domain.Repositories.Query
 {
     public interface IDataHistoricaRepositorySQL : IQueryRepository<ResultadosPacienteSQL>
     {
-        Task<IEnumerable<ResultadosPacienteSQL>> GetAllAsync();
-
         Task<List<ResultadosPacienteSQL>> GetAllByNameSQLAsync(ListRequest request);
     }
 }

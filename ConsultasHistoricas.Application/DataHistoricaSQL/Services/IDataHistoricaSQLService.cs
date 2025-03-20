@@ -6,8 +6,6 @@ namespace ConsultasHistoricas.Application.DataHistoricaSQL.Services
 {
     public interface IDataHistoricaSQLService
     {
-        Task<IEnumerable<ResultadosPacienteSQL>> GetAllAsync();
-
         Task<List<ResultadosPacienteSQL>> GetAllByNameAsync(ListRequest request);
 
         Task<DataTableResponse<ResultadosPacienteSQL>> GetAllDataTable(DataTableRequest request);

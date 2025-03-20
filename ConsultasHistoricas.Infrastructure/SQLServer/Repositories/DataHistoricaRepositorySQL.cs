@@ -14,27 +14,6 @@ namespace ConsultasHistoricas.Infrastructure.SQLServer.Repositories
         {
         }
 
-        public async Task<IEnumerable<ResultadosPacienteSQL>> GetAllAsync()
-        {
-            try
-            {
-                var storeProcedure = "sp_historicaaa";
-
-                using (var connection = CreateConnection())
-                {
-                    return (await connection.QueryAsync<ResultadosPacienteSQL>(
-                            storeProcedure,
-                            commandType: CommandType.StoredProcedure
-                        )).ToList();
-                }
-            }
-            catch (Exception ex)
-            {
-
-                throw new Exception(ex.Message);
-            }
-        }
-
         public async Task<List<ResultadosPacienteSQL>> GetAllByNameSQLAsync(ListRequest request)
         {
             try
