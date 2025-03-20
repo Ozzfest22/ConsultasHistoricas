@@ -1,4 +1,5 @@
 ﻿using ConsultasHistoricas.Application.DataHistoricaOracle.Services;
+using ConsultasHistoricas.Domain.Models.SQL;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ConsultasHistoricas.API.Controllers
@@ -15,9 +16,9 @@ namespace ConsultasHistoricas.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll([FromQuery] ListRequest request)
         {
-            var data = await _dataHistoricaService.GetAllOracleAsync();
+            var data = await _dataHistoricaService.GetAllOracleAsync(request);
 
             return Ok(data);
         }
