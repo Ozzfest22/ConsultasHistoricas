@@ -1,5 +1,7 @@
-﻿using ConsultasHistoricas.Domain.Repositories.Query;
+﻿using ConsultasHistoricas.Application.Abstractions;
+using ConsultasHistoricas.Domain.Repositories.Query;
 using ConsultasHistoricas.Domain.Repositories.Query.Base;
+using ConsultasHistoricas.Infrastructure.Externals.FileExports;
 using ConsultasHistoricas.Infrastructure.Oracle.Repositories;
 using ConsultasHistoricas.Infrastructure.Oracle.Repositories.Base;
 using ConsultasHistoricas.Infrastructure.SQLServer.Repositories;
@@ -17,6 +19,7 @@ namespace ConsultasHistoricas.Infrastructure
             services.AddScoped(typeof(IQueryRepository<>), typeof(QueryRepositoryOracle<>));
             services.AddTransient<IDataHistoricaRepositorySQL, DataHistoricaRepositorySQL>();
             services.AddTransient<IDataHistoricaRepositoryOracle, DataHistoricaRepositoryOracle>();
+            services.AddScoped<IExcelExportService, ExcelExportService>();
         }
     }
 }

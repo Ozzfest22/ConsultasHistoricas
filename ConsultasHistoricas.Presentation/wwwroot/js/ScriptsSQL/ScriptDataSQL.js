@@ -144,15 +144,59 @@ function cargarDataTableOracle() {
 function obtenerValorOracle() {
     $('#btn-oracle-excel').click(function () {
 
-        const valueSQL = document.getElementById('sb-data-oracle').value;
-        alert(valueSQL);
+        const valueOracle = document.getElementById('sb-data-oracle').value;
+
+        $.ajax({
+            url: '/DataOracle/ExcelDownload?name=' + valueOracle,
+            type: 'GET',
+            xhrFields: {
+                responseType: 'blob'
+            },
+            success: function (data) {
+                var a = document.createElement('a');
+                var url = window.URL.createObjectURL(data);
+                a.href = url;
+                a.download = 'Resultados ' + valueOracle.toUpperCase() + '.xlsx';
+
+                document.body.append(a);
+                a.click();
+                a.remove();
+
+                window.URL.revokeObjectURL(url);
+            },
+            error: function () {
+                alert('error')
+            }
+        });
     });
 }
 
 function obtenerValorSQL() {
     $('#btn-sql-excel').click(function () {
 
-        const valueOracle = document.getElementById('sb-data-sql').value;
-        alert(valueOracle);
+        const valueSQL = document.getElementById('sb-data-sql').value;
+
+        $.ajax({
+            url: '/DataSQL/ExcelDownload?name=' + valueSQL,
+            type: 'GET',
+            xhrFields: {
+                responseType: 'blob'
+            },
+            success: function (data) {
+                var a = document.createElement('a');
+                var url = window.URL.createObjectURL(data);
+                a.href = url;
+                a.download = 'Resultados ' + valueSQL.toUpperCase() + '.xlsx';
+
+                document.body.append(a);
+                a.click();
+                a.remove();
+
+                window.URL.revokeObjectURL(url);
+            },
+            error: function () {
+                alert('error')
+            }
+        });
     });
 }

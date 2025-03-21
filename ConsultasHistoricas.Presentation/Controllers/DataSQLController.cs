@@ -1,4 +1,5 @@
-﻿using ConsultasHistoricas.Application.DataHistoricaSQL.Services;
+﻿using ConsultasHistoricas.Application.Abstractions;
+using ConsultasHistoricas.Application.DataHistoricaSQL.Services;
 using ConsultasHistoricas.Domain.Models.DataTables;
 using ConsultasHistoricas.Domain.Models.SQL;
 using Microsoft.AspNetCore.Mvc;
@@ -8,10 +9,12 @@ namespace ConsultasHistoricas.Presentation.Controllers
     public class DataSQLController : Controller
     {
         private readonly IDataHistoricaSQLService _dataHistoricaService;
+        private readonly IExcelExportService _excelExportService;
 
-        public DataSQLController(IDataHistoricaSQLService dataHistoricaService)
+        public DataSQLController(IDataHistoricaSQLService dataHistoricaService, IExcelExportService excelExportService)
         {
             _dataHistoricaService = dataHistoricaService;
+            _excelExportService = excelExportService;
         }
 
         public IActionResult Index()
@@ -47,6 +50,21 @@ namespace ConsultasHistoricas.Presentation.Controllers
                 };
 
                 return await _dataHistoricaService.GetAllDataTable(request);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task<IActionResult> ExcelDownload(string name) 
+        {
+            try
+            {
+                var content = await _excelExportService.ExportDataSQL(name);
+
+                return File(content, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", $"Resultados {name.ToUpper()}");
             }
             catch (Exception ex)
             {
