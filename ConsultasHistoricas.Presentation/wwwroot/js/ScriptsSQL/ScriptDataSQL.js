@@ -146,6 +146,9 @@ function obtenerValorOracle() {
 
         const valueOracle = document.getElementById('sb-data-oracle').value;
 
+        const $btn = $(this);
+        $btn.prop('disabled', true);
+
         $.ajax({
             url: '/DataOracle/ExcelDownload?name=' + valueOracle,
             type: 'GET',
@@ -166,6 +169,9 @@ function obtenerValorOracle() {
             },
             error: function () {
                 alert('error')
+            },
+            complete: function () {
+                $btn.prop('disabled', false);
             }
         });
     });
@@ -175,6 +181,9 @@ function obtenerValorSQL() {
     $('#btn-sql-excel').click(function () {
 
         const valueSQL = document.getElementById('sb-data-sql').value;
+
+        const $btn = $(this);
+        $btn.prop('disabled', true);
 
         $.ajax({
             url: '/DataSQL/ExcelDownload?name=' + valueSQL,
@@ -196,6 +205,9 @@ function obtenerValorSQL() {
             },
             error: function () {
                 alert('error')
+            },
+            complete: function () {
+                $btn.prop('disabled', false);
             }
         });
     });
