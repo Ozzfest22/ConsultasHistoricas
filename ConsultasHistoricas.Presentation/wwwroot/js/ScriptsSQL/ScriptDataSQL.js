@@ -2,11 +2,13 @@
 
     cargarDataTableSQL();
     cargarDataTableOracle();
+    obtenerValorOracle();
+    obtenerValorSQL();
 });
 
 function cargarDataTableSQL() {
 
-    datatable = $("#tbDataSQL").DataTable({
+    datatableSQL = $("#tbDataSQL").DataTable({
         "processing": true,
         "serverSide": true,
         "deferLoading": 0,
@@ -57,11 +59,17 @@ function cargarDataTableSQL() {
         }
     });
 
+    $('#tbDataSQL').on('search.dt', function () {
+        const searchValueSQL = datatableSQL.search();
+
+        $('#sb-data-sql').val(searchValueSQL);
+    });
+
 }
 
 function cargarDataTableOracle() {
 
-    datatable = $("#tbDataOracle").DataTable({
+    datatableOracle = $("#tbDataOracle").DataTable({
         "processing": true,
         "serverSide": true,
         "deferLoading": 0,
@@ -126,4 +134,25 @@ function cargarDataTableOracle() {
         }
     });
 
+    $('#tbDataOracle').on('search.dt', function () {
+        const searchValueOracle = datatableOracle.search();
+
+        $('#sb-data-oracle').val(searchValueOracle);
+    });
+}
+
+function obtenerValorOracle() {
+    $('#btn-oracle-excel').click(function () {
+
+        const valueSQL = document.getElementById('sb-data-oracle').value;
+        alert(valueSQL);
+    });
+}
+
+function obtenerValorSQL() {
+    $('#btn-sql-excel').click(function () {
+
+        const valueOracle = document.getElementById('sb-data-sql').value;
+        alert(valueOracle);
+    });
 }
